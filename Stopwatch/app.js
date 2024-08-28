@@ -22,7 +22,7 @@ const startFunction = function() {
         precentage > 99 && (precentage = 0);
 
 
-        main[0].style.background = `conic-gradient(rgb(0, 0, 0), rgb(226, 226, 226) 0% ${precentage}%, rgb(205, 205, 205) 0% 96%)`;
+        main[0].style.background = `conic-gradient(rgb(0, 0, 0), rgb(226, 226, 226) 0%  ${precentage}%, rgb(205, 205, 205) 0% 96%)`;
         main[0].style.transition = `0.5s`;
         precentage += 100/60;
 

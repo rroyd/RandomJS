@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <section>
+        <img src="image.jpeg" alt="" />
+        <h3>Ping Pong Score Keeper</h3>
+        <h1 id="scoreboard">
+          <span id="playerOneScore">0</span> To
+          <span id="playerTwoScore">0</span>
+        </h1>
+        <p>Use buttons below to keep score.</p>
+        <div>
+          <h1 style="display: inline; font-size: 25px">Playing to:</h1>
+          <form action="">
+            <select name="range" id="range">
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+            </select>
+          </form>
+        </div>
+        <div>
+          <button class="one"><span>+1 Player 1</span></button>
+          <button class="two"><span>+1 Player 2</span></button>
+          <button class="reset">Reset</button>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

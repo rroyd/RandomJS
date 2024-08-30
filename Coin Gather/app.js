@@ -31,15 +31,15 @@ startAgain.id = "startAgain";
 
 container.append(gameOver, endParagraph, buttons);
 
-const coinSound = new Audio("/assets/coin.mp3");
-const hurt = new Audio("/assets/hurt.mp3");
+const coinSound = new Audio("./assets/coin.mp3");
+const hurt = new Audio("./assets/hurt.mp3");
 
 
 let isRunning = false;
 let lives = 3;
 
-player.src = "/assets/player.png"
-coin.src = "/assets/coin.gif"
+player.src = "./assets/player.png"
+coin.src = "./assets/coin.gif"
 
 player.classList.add("player");
 coin.classList.add("coin");
@@ -49,7 +49,7 @@ gameboard.style.width = `${window.screen.width}px`;
 
 const spawnMonster = function() {
     let monster = document.createElement("img");
-    monster.src = "/assets/monster.png";
+    monster.src = "./assets/monster.png";
     monster.classList.add("monster");
 
     let {x, y} = generateRandomPosition();
@@ -97,7 +97,7 @@ const directMonsters = function() {
                 if (lives === 0) {
                     console.log("DEAD FOREVER")
                     currentLife = document.querySelector(`.hearts img`);
-                    currentLife.src = "/assets/empty_heart.png"; 
+                    currentLife.src = "./assets/empty_heart.png"; 
                     clearInterval(intervalOfMonsters);
                     for(let monster of monsters) {
                         monster.remove();
@@ -106,7 +106,7 @@ const directMonsters = function() {
                 }
                 else if (lives > 0){
                     currentLife = document.querySelector(`.hearts img:nth-of-type(${lives + 1})`);
-                    currentLife.src = "/assets/empty_heart.png"; 
+                    currentLife.src = "./assets/empty_heart.png"; 
                     player.style.opacity = "0";
                     coin.style.opacity = "0";    
                     showScore();
@@ -125,7 +125,7 @@ const generateRandomPosition = function() {
     return {'x':`${x}%`,'y':`${y}%`};
 }
 
-const startGame = function() {
+const startGame = function(addMonster) {
     let {x: xCoin, y: yCoin} = generateRandomPosition();
     let {x: xPlayer, y: yPlayer} = generateRandomPosition();
 
@@ -231,6 +231,8 @@ rules.addEventListener("click", function() {
     }
 });
 
+//event delegation
+
 container.addEventListener("click", (e) => {
     console.log(e.target.id);
     if (e.target.id == "backToMainMenu") {
@@ -247,21 +249,10 @@ container.addEventListener("click", (e) => {
 
         let restartHearts = document.querySelectorAll(`.hearts img`);
         for(let heart of restartHearts) {
-            heart.src = "/assets/heart.png"
+            heart.src = "./assets/heart.png"
         }
         startGame();
 
         
     }
 })
-
-
-// back.addEventListener('click', () => {
-//     document.location.reload();
-// })
-
-// startAgain.addEventListener('click', () => {
-//     document.location.reload();
-    
-//     start.click();
-// });    

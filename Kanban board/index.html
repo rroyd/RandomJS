@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>Kanban Board</h1>
+    <nav>
+      <div class="note" draggable="true">
+        <div class="content">
+          <h3 contenteditable>Enter note title</h3>
+          <blockquote contenteditable>Enter note description</blockquote>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <section>
+        <div class="header" style="background-color: lightcoral">Doing</div>
+        <div class="items" dropzone></div>
+      </section>
+      <section>
+        <div class="header" style="background-color: rgb(155, 155, 155)">
+          Review
+        </div>
+        <div class="items"></div>
+      </section>
+      <section>
+        <div class="header" style="background-color: lightgreen">Done</div>
+        <div class="items"></div>
+      </section>
+      <section>
+        <div class="header" style="background-color: lightblue">Backlog</div>
+        <div class="items"></div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

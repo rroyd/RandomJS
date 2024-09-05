@@ -5,9 +5,9 @@ const results = document.querySelector("#results");
 
 const makeReq = async (query) => {
   try {
-    const res = await axios.get(
-      `https://api.tvmaze.com/search/shows?q=${query}`
-    );
+    let url = `https://api.tvmaze.com/search/shows?q=${query}`;
+    query = "" && (url = "https://api.tvmaze.com/shows");
+    const res = await axios.get(url);
     return res;
   } catch (e) {
     throw `Error, ${e}`;
@@ -15,6 +15,9 @@ const makeReq = async (query) => {
 };
 
 const compareDate = (show1, show2) => {
+  if (!show1.show.premiered || !show2.show.premiered) {
+    return 0;
+  }
   return (
     parseInt(show1.show.premiered.replaceAll("-")) -
     parseInt(show2.show.premiered.replaceAll("-"))
@@ -27,7 +30,7 @@ const compareRating = (show1, show2) => {
 
 const filters = {
   sortBy: "date",
-  sortFrom: "lth",
+  sortFrom: "htl",
 };
 
 const filterFns = {
@@ -44,7 +47,7 @@ const makeCard = ({ name, image, summary, premiered }, score) => {
   const rating = document.createElement("h1");
 
   card.classList.add("card", "hide");
-  imageEl.src = image.original;
+  image.original !== null && (imageEl.src = image.original);
   title.textContent = name;
   dateReleased.textContent = premiered;
   description.innerHTML = summary;
@@ -63,7 +66,6 @@ form.addEventListener("submit", (e) => e.preventDefault());
 form.addEventListener("change", (e) => {
   e.target.name === "sort" && (filters.sortFrom = e.target.value);
   e.target.name === "filter" && (filters.sortBy = e.target.value);
-  console.log(filters.sortFrom, filters.sortBy);
 });
 
 searchBtn.addEventListener("click", async () => {
@@ -72,13 +74,18 @@ searchBtn.addEventListener("click", async () => {
 
   results.innerHTML = "";
 
-  shows.sort(filterFns[filters.sortBy]);
+  if (shows.length === 0) {
+    const noResults = document.createElement("h1");
+    noResults.textContent = "No results found";
+    noResults.style.textAlign = "center";
+    results.append(noResults);
+  } else {
+    shows.sort(filterFns[filters.sortBy]);
 
-  filters.sortFrom === "htl" && shows.reverse();
+    filters.sortFrom === "htl" && shows.reverse();
 
-  shows.forEach((show) => console.log(show.score));
-
-  shows.forEach(({ show, score }) => {
-    makeCard(show, score);
-  });
+    shows.forEach(({ show, score }) => {
+      makeCard(show, score);
+    });
+  }
 });

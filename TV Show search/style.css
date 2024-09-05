@@ -1,15 +1,23 @@
-body {
+body,
+button,
+input {
   font-family: "Lato", sans-serif;
 }
 
 .title {
+  font-size: 3rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-top: 3rem;
 }
 
 h1,
 h3 {
   margin: 0;
+}
+
+h2 {
+  text-align: center;
+  margin: 5rem;
 }
 
 main {
@@ -52,6 +60,7 @@ button {
   grid-column: span 1;
   border-radius: 20px;
   background-color: seashell;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: start;

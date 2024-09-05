@@ -15,6 +15,7 @@
   <body>
     <main>
       <h1 class="title">TV Search App</h1>
+      <h2>Search your favorite TV Shows. Discover new shows.</h2>
       <form action="">
         <div id="filters">
           <label for="query">Search for TV Shows: </label>
@@ -28,10 +29,10 @@
 
           <h3>Sort from:</h3>
           <div>
-            <input type="radio" value="lth" id="lth" name="sort" checked />
-            <label for="lth">Lowest to highest / Oldest to Newest</label>
-            <input type="radio" value="htl" name="sort" id="htl" />
+            <input type="radio" value="htl" name="sort" id="htl" checked />
             <label for="htl">Highest to lowest / Newest to Oldest</label>
+            <input type="radio" value="lth" id="lth" name="sort" />
+            <label for="lth">Lowest to highest / Oldest to Newest</label>
           </div>
           <button id="search">
             <svg

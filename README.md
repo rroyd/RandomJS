@@ -19,11 +19,17 @@ The goal is to get as many coins as you can.
 
 Coding time: Approx. 24 hours
 
+![Screen Recording 2024-09-05 at 16 30 59](https://github.com/user-attachments/assets/0a68d94c-a2e7-4fbd-920f-2b60407f5f91)
+
+
 # 2. Score Keeper
 
 A tool to keep track of each player's score in a ping pong game.
 
 Coding time: 1 hour
+
+![ScreenRecording2024-09-05at16 55 00-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/d737b16a-6333-4a53-80d9-11d5f13fe1ec)
+
 
 # 3. Random Color Picker
 
@@ -36,6 +42,10 @@ Coding time: 10 minutes
 Simple stopwatch to keep track of how much time has past.
 
 Coding time: 1.5 hours
+
+![ScreenRecording2024-09-05at16 59 18-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/591172f0-d1cc-489f-ad82-96e74f4574f8)
+
+
 
 # 5. Simple To Do List
 

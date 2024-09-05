@@ -4,13 +4,12 @@ const body = document.querySelector("body");
 
 const sections = document.querySelectorAll("section")
 
+let newNote, draggedNote;
+
+const booleans = [false,false,false,false];
+
 let title = document.querySelector(".content h3"),
 desc = document.querySelector(".content blockquote");
-
-let currTitle = title.innerText, 
-currDesc = desc.innerText;
-
-const isAdded = [false,false,false,false];
 
 const createNewNote = function(title, desc) {
     const item = document.createElement("div");
@@ -30,41 +29,70 @@ const createNewNote = function(title, desc) {
     content.append(h3,blockqoute)
     newNote.append(content);
     item.append(newNote);
+    item.id = "new";
+
+    item.addEventListener("dragstart", ()=> {
+        draggedNote = item;
+    }) 
 
     return item;
 }
 
-title.addEventListener('change', () => {
-    console.log("hey")
+note.addEventListener('dragstart',() => {
+    newNote = createNewNote(title.innerText,desc.innerText);
+    draggedNote = newNote;
 })
 
-body.addEventListener("dragover", (e) => {
-    note.classList.add("dragging")
-    note.style.top = `${e.clientY}px`;
-    note.style.left = `${e.clientX}px`;
-})
+body.addEventListener("drop", (e) => {
+    if(e.target.tagName !== "SECTION") {
+        newNote.remove();
+    }
+    else {
+        let section = e.target, items = e.target.children[1];
+        e.preventDefault();
+        if(draggedNote.id === "new")
+        {
+            items.append(newNote);
+            section.style.backgroundColor = "";
 
-note.addEventListener('dragend', (e) => {
-    e.preventDefault();
-    note.classList.remove("dragging");
-})
+            newNote.classList.remove("hide");
+            newNote.classList.remove("dragging");
+            newNote.removeAttribute("style");
+            newNote.id = "";
+
+            title.innerText = "Enter title";
+            desc.innerText = "Enter description";
+        }
+        else {
+            section.append(draggedNote);
+            section.style.backgroundColor = "";
+        }
+
+    }
+});
 
 sections.forEach((section, i) => {
     //LEAVE SECTION
     let items = section.children[1];
-    let currTitle = document.querySelector(".note .content h3").innerText,
+
+    currTitle = document.querySelector(".note .content h3").innerText,
     currDesc = document.querySelector(".note .content blockquote").innerText;
-    let newNote = createNewNote(currTitle,currDesc)
     section.addEventListener("dragenter", (e) => {
-
-
-        isAdded[i] === false && (items.append())
-        isAdded[i] = true;
+        if(!booleans[i])
+        {
+            section.style.backgroundColor = "grey";
+            booleans[i] = true;
+        }
     })
 
     section.addEventListener("dragleave", (e) => {
-        console.log(section)
-        let lastItem = section.children[1].children[length]
+        if(booleans[i]) {
+            section.style.backgroundColor = "";
+            booleans[i] = false;
+        }
+    })
 
+    section.addEventListener("dragover", (e) => {
+        e.preventDefault();
     })
 })

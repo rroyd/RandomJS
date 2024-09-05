@@ -15,17 +15,13 @@ h3 {
     min-width: 100px;
 }
 
-div {
-    width: 50%;
-}
-
 .note {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    user-select: none;
+    margin: 1rem;
     font-size: 20px;
     transform: 1s;
 }
@@ -43,6 +39,7 @@ blockquote {
     flex-wrap: wrap;
     flex-direction: column;
     flex: 1 0 0;
+    user-select:text;
     justify-content: start;
     overflow: hidden;
 }
@@ -93,13 +90,14 @@ nav div {
     display: flex;
     flex-direction: column;
     width: 100%;
+    align-items: stretch;
 }
 
-.item {
+.item .note {
     background-color: rgb(254, 255, 204);
-    width: 100%;
     margin-top: 20px;
-    height: 80px;
+    height: fit-content;
+    font-size: 12px;
 }
 
 .hide {

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <h1 class="title">TV Search App</h1>
+      <form action="">
+        <div id="filters">
+          <label for="query">Search for TV Shows: </label>
+          <input type="text" id="query" name="query" />
+          <h3>Sort by:</h3>
+
+          <input type="radio" value="date" name="filter" id="date" checked />
+          <label for="date">Date Released</label>
+          <input type="radio" value="rating" name="filter" id="rating" />
+          <label for="rating">Rating</label>
+
+          <h3>Sort from:</h3>
+          <div>
+            <input type="radio" value="lth" id="lth" name="sort" checked />
+            <label for="lth">Lowest to highest / Oldest to Newest</label>
+            <input type="radio" value="htl" name="sort" id="htl" />
+            <label for="htl">Highest to lowest / Newest to Oldest</label>
+          </div>
+          <button id="search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+              />
+            </svg>
+            Search
+          </button>
+        </div>
+      </form>
+    </main>
+
+    <section>
+      <div id="results"></div>
+    </section>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>

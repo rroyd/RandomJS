@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- API KEY: sRQoLbcOnhT1djyQLObx58bqD0A5HJh3fiYoSkiM -->
+    <!-- #A4E63C
+    #C8E69E
+    #342E37
+    #006A15
+    #00BB29 -->
+  </head>
+  <body>
+    <nav>
+      <a href="">
+        <h1>
+          Ge<svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="56"
+            height="56"
+            fill="currentColor"
+            class="bi bi-geo-alt-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+            /></svg
+          >Finder
+        </h1>
+      </a>
+      <div class="links">
+        <a href="" class="link about">About</a>
+        <a href="" class="link howto">How to use</a>
+        <a href="" class="link credits">Credits</a>
+      </div>
+      <button class="hamburger">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="70"
+          height="70"
+          fill="currentColor"
+          class="bi bi-list"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+          />
+        </svg>
+      </button>
+    </nav>
+
+    <div class="collapse links" id="">
+      <a href="" class="link about">About</a>
+      <a href="" class="link howto">How to use</a>
+      <a href="" class="link credits">Credits</a>
+    </div>
+
+    <section class="one">
+      <h1 class="title">Where are you currently traveling?</h1>
+      <div>
+        <input id="location" type="text" name="location" />
+        <button id="searchForCountry" name="location">Confirm</button>
+      </div>
+      <main class="results"></main>
+    </section>
+
+    <section class="two">
+      <h1 class="title">What city are you visiting?</h1>
+      <div>
+        <input id="location" type="text" name="city" />
+        <button id="searchForCity" name="city">Confirm</button>
+      </div>
+      <main class="results"></main>
+    </section>
+
+    <section class="three">
+      <h1 class="title">Select category of choice</h1>
+      <div class="category">
+        <div class="item" name="catering">
+          🍽️
+          <h3 name="catering">Restaurants</h3>
+        </div>
+        <div class="item" name="accommodation">
+          🏢
+          <h3 name="accommodation">Hotels</h3>
+        </div>
+        <div class="item" name="entertainment">
+          🏛️
+          <h3 name="entertainment">Museums</h3>
+        </div>
+        <div class="item" name="commercial">
+          🛍️
+          <h3 name="commercial">Shopping</h3>
+        </div>
+        <div class="item" name="commercial">
+          🍻
+          <h3 name="catering">Bars</h3>
+        </div>
+        <div class="item" name="activity">
+          🪩
+          <h3 name="activity">Activities</h3>
+        </div>
+        <div class="item" name="tourist">
+          <h3 name="tourist">Other</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="four">
+      <div class="cards"></div>
+
+      <div class="map"></div>
+    </section>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </body>
+</html>

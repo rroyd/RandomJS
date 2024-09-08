@@ -15,6 +15,18 @@ h3 {
   margin: 0;
 }
 
+#filters div:last-child {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  border: none;
+  padding: 20px;
+  font-size: 1.5rem;
+  margin: 10px;
+}
+
 h2 {
   text-align: center;
   margin: 5rem;

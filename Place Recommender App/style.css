@@ -1,0 +1,218 @@
+body,
+h1,
+button,
+input {
+  margin: 0;
+  font-family: "Bebas Neue", sans-serif;
+  border: none;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+  transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+a:hover {
+  color: greenyellow;
+}
+
+.link:hover {
+  color: greenyellow;
+}
+
+body {
+  font-size: 15px;
+}
+
+h1 {
+  display: inline-block;
+  padding: 3rem;
+  font-size: 3rem;
+}
+
+nav {
+  background-color: aliceblue;
+  display: flex;
+  padding: 0 1rem;
+  justify-content: space-around;
+  align-items: center;
+  transition: 0.5s;
+}
+
+nav:hover {
+  background-color: darkgreen;
+}
+
+nav:hover a {
+  color: white;
+}
+
+.links {
+  display: flex;
+  gap: 3rem;
+}
+
+.one,
+.two,
+.three {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 50vh;
+  font-size: 20px;
+  flex-wrap: wrap;
+  transition: opacity 0.5s;
+}
+
+.one div,
+.two div,
+.three div {
+  display: flex;
+}
+
+.four {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+button {
+  padding: 2rem 4rem;
+  background-color: #c8e69e;
+  color: #006a15;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+button:hover {
+  background-color: #006a15;
+  color: #c8e69e;
+}
+
+input {
+  background-color: #342e37;
+  font-size: 3rem;
+  color: white;
+  padding: 0 1.5rem;
+}
+
+.hamburger {
+  display: none;
+  background-color: transparent;
+}
+
+@media (max-width: 750px) {
+  .links {
+    display: none;
+  }
+  nav .hamburger {
+    display: inline-block;
+    background-color: transparent;
+  }
+  .collapse {
+    display: flex;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 0.5s;
+    padding: 1rem;
+    flex-direction: column;
+    text-align: end;
+    justify-content: end;
+    padding-left: 5rem;
+  }
+  .collapse:hover {
+    background-color: #006a15;
+  }
+  .collapse:hover a {
+    color: white;
+  }
+}
+@media (min-width: 750px) {
+  .collapse {
+    display: none;
+  }
+}
+
+#hide {
+  transform: scaleY(1);
+}
+
+.results {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(50px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+  grid-auto-flow: auto;
+  margin-top: 2rem;
+}
+
+.results .item {
+  display: flex;
+  flex-direction: column;
+  grid-row: span 1;
+  grid-column: span 1;
+  font-size: 4rem;
+  text-align: center;
+  transition: 0.25s;
+  opacity: 1;
+  margin: 4rem;
+  cursor: pointer;
+}
+
+.item h3 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.item:hover {
+  transform: scale(1.2);
+}
+
+.results img {
+  width: 200px;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  text-align: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.category h3 {
+  margin: 10px;
+}
+
+.category .item {
+  cursor: pointer;
+}
+
+.category .item {
+  transition: 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards {
+  min-width: 20%;
+}
+
+.map {
+  max-width: 70%;
+}
+
+.map img {
+  width: 100%;
+  background-repeat: repeat;
+}

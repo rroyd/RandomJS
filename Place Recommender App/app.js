@@ -10,6 +10,7 @@ const categories = document.querySelector(".category");
 const cards = document.querySelector(".cards");
 const map = document.querySelector(".map");
 
+let places;
 let allCitys = [];
 let currentPlaces = [];
 
@@ -212,7 +213,18 @@ async function fetchPlaces(category, lat, long) {
   };
   try {
     const res = await axios(config);
-    return res;
+
+    let places = res.data.features;
+    places = places
+      .map(place => {
+        return {
+          name: place.properties.name,
+          address: place.properties.address_line2,
+          lat: place.geometry.coordinates[0],
+          long: place.geometry.coordinates[1]
+        }
+      })
+    return places;
   } catch (e) {
     throw e;
   }
@@ -226,13 +238,51 @@ categories.addEventListener("click", async (e) => {
     let catergoryQuery = selectedCategory.getAttribute("name");
     fade(three, four);
 
-    const places = await fetchPlaces(catergoryQuery, lat, long);
-    console.log(places);
+    places = await fetchPlaces(catergoryQuery, lat, long);
+    console.log(places)
+
+    let url = `https://maps.geoapify.com/v1/staticmap?style=klokantech-basic&apiKey=2f750409910b4106a8c5bda082b916e3&center=lonlat:${long},${lat}&zoom=10.5&marker=`
+    
+    places.forEach(({name, address, long,lat},i) => {
+      const cardEl = document.createElement("div");
+      const titleEl = document.createElement("h3");
+      const addressEl = document.createElement("p");
+      
+      
+      if(name !== "") {
+        titleEl.textContent = name;
+        addressEl.textContent = address;
+
+        cardEl.classList.add("card");
+        cardEl.append(titleEl,addressEl);
+        cards.append(cardEl);
+
+        url += `lonlat:${lat},${long};type:awesome;color:%231db510;size:xx-large;icon:apple-alt;whitecircle:no`
+        if (places.length - 1 !== i) {
+          url += `|`
+        }
+    }
+    })
+
+
 
     const image = document.createElement("img");
-    image.src = `https://maps.geoapify.com/v1/staticmap?style=klokantech-basic&apiKey=2f750409910b4106a8c5bda082b916e3&center=lonlat:${long},${lat}&zoom=12`;
+    image.src = url;
     image.width = 1000;
     image.height = 700;
     map.append(image);
   }
 });
+
+cards.addEventListener('click', (e) => {
+  if(e.target.classList.contains("card") || e.target.tagName === "H3" || e.target.tagName === "P") {
+    let el = e.target;
+    if(el.tagName === "H3" || el.tagName === "P") {
+      el = el.parentElement;
+    }
+    el = el.childNodes[0].textContent;
+    open(`https://www.google.com/search?q=${el}`);
+    
+    
+  }
+})

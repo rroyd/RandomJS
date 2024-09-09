@@ -1,6 +1,7 @@
 # JS Projects
 
-I wanted to challenge myself and test my JavaScript skills so I made this repo for practicing my Javascript skills. Feel free to try them out.
+I wanted to challenge myself and test my JavaScript skills so I made this repo for practicing my Javascript skills. You will also be able to see my JavaScript progression.
+Feel free to try them out.
 
 # Projects
 
@@ -61,4 +62,13 @@ I used the async/await method and Axios to get the data, hence it's the simplest
 
 Used Hoppstach to analyse the responses, Postman is also a option.
 
+# 7. GeoFinder
+An app that suggests the client (tourist) places to visit based upon the category he chooses. The application uses the Places Geoapify API for the places and thecompaniesapi for the location.
+- Made a live search with a debounce technique. It will fetch results once the client stops searching for 500ms.
+- The app has a modern style and a user-friendlty UX.
+- Added zoom-in and zoom-out which the API doesn't include.
+- Each places consists of a google search and coordinates on the map. The client can center the place on the map.
+- Used CSS flexbox and grid to display content responsively with media queries.
+- The app is responsive on mobile as well.
+- More improvements will come soon.
 # .....More to be added....

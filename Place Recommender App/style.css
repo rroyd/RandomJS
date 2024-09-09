@@ -124,6 +124,7 @@ input {
     transform-origin: top;
     transition: 0.5s;
     padding: 1rem;
+    padding-right: 2rem;
     flex-direction: column;
     text-align: end;
     justify-content: end;
@@ -231,19 +232,119 @@ input {
   cursor: pointer;
 }
 
-.card:hover {
+/* .card:hover {
   transform: scale(0.9);
-}
+} */
 
 .card h3 {
   font-size: 30px;
 }
 
 .map {
+  position: relative;
   max-width: 70%;
 }
 
 .map img {
   width: 100%;
   background-repeat: repeat;
+}
+
+.map button {
+  position: absolute;
+  padding: 1rem 2rem;
+}
+
+#in {
+  left: 15%;
+}
+
+.aboutSection {
+  margin: 2rem;
+  font-size: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.aboutSection p {
+  font-size: 1.5rem;
+  width: 50%;
+}
+
+.aboutSection h1,
+.howtoSection h1 {
+  width: 50%;
+  padding: 0;
+}
+
+.aboutSection div,
+.howtoSection div {
+  width: 100%;
+  display: flex;
+}
+
+.buttons {
+  display: flex;
+  font-size: 1rem;
+}
+
+.buttons button {
+  transform: scale(0.8);
+}
+
+.aboutSection .images {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+}
+
+.aboutSection div img {
+  background-size: cover;
+  width: 50%;
+  height: 100%;
+}
+
+.howtoSection {
+  margin: 4rem;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.howtoSection p {
+  font-size: 2rem;
+  width: 50%;
+}
+.howtoSection h1 {
+  text-decoration: underline;
+  margin-top: 10px;
+  text-underline-offset: 10px;
+}
+
+.creditsSection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #005a14;
+  text-align: start;
+  color: white;
+}
+
+.creditsSection > * {
+  width: 80%;
+  padding: 2rem 0;
+}
+
+.creditsSection h1 {
+  margin: 0;
+}
+
+.creditsSection a {
+  color: white;
+  font-size: 3rem;
+}
+
+h1 span {
+  color: #c8e69e;
 }

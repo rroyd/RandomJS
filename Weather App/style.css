@@ -1,0 +1,264 @@
+body,
+h1{
+  font-family: "Exo 2", sans-serif;
+  max-height: 50vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h3,option,h1,h2,p,button, .cards, .lastSection, .hours, hr, select,h5,img, .item, .slider, .bar,#speed,.start div, #uv, #progressBar
+ {
+  z-index: 5;
+}
+
+h5 {
+  margin: 0;
+  padding: 0;
+  font-size: 3rem;
+}
+
+body {
+  font-size: 15px;
+}
+
+main {
+  display: flex;
+  min-height: 50vh;
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  gap: 2rem;
+  align-items: center;
+  justify-content: start;
+  width: 70%;
+  background-color: rgb(47, 158, 255);
+  background: rgb(151, 145, 255);
+  background: linear-gradient(
+    90deg,
+    rgb(179, 234, 255) 0%,
+    rgba(255, 255, 255, 1) 35%,
+    rgba(217, 249, 255, 1) 72%,
+    rgb(237, 252, 255) 100%
+  );
+}
+
+.bar { 
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  padding: 2rem;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+}
+
+.slider .toggle {
+  position: absolute;
+  border-radius: 50%;
+
+  cursor: pointer;
+  transform: scale(1.2);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0,0,0,0.6);
+  color: white;
+  left: -25px;
+  top: 50vh;
+  text-align: center;
+  padding: 10px;
+}
+
+.weather h1 {
+  font-size: 10rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+  display: inline-block;
+  padding: 0rem 2rem;
+}
+
+.weather section {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+hr {
+  width: 2px;
+  background-color: rgb(70, 70, 70);
+}
+
+.hours {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2rem;
+  min-height: 25vh;
+  background-color: rgba(70, 70, 70, 0.7);
+  width: 100%;
+  border-radius: 50px;
+  color: white;
+}
+
+.hours section {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  max-height: 10vh;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 20px;
+  transition: 0.25s;
+}
+
+.location { 
+  padding-bottom: 0;
+}
+
+button {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 600;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  transition: 0.25s;
+}
+
+.start {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+select {
+  font-family: "Exo 2", sans-serif;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 0.5rem;
+  color: white;
+  background-color: rgba(70, 70, 70, 0.7);
+  border: none;
+}
+
+h3 {
+  font-size: 1.5rem;
+  padding: 0;
+  align-self: start;
+  margin: 0;
+}
+
+.card button:hover {
+  background-color: rgb(64, 64, 64);
+  color: white;
+}
+
+
+
+.card:last-child {
+  font-size: 3rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#lastSection {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-rows: repeat(10, 1fr);
+  width: 100%;
+  gap: 30px;
+}
+
+.item {
+  background-color: rgba(70, 70, 70, 0.7);
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  grid-row: span 1;
+  grid-column: span 1;
+  border-radius: 40px;
+  color: white;
+}
+.item:nth-of-type(3) {
+  grid-row-start: 2;
+  grid-column-start: 2;
+}
+.item:nth-of-type(4) {
+  grid-row-start: 2;
+}
+.item:last-child {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+#uv {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: start;
+  width: 100%;
+  border-radius: 30px;
+  height: 5vh;
+  width: 100%;
+  overflow: hidden;
+  mask-clip: content-box;
+  border: none;
+  background-color: rgba(0,0,0,0.6);
+}
+
+#progressBar {
+  transform-origin: left;
+  transition: 0.5s;
+  top: 50%;
+  width: 100%;
+  height: 10vh;
+  background: rgb(186,219,92);
+  background: linear-gradient(90deg, rgba(186,219,92,1) 0%, rgba(82,156,0,1) 15%, rgba(255,252,17,1) 30%, rgba(255,203,44,1) 47%, rgba(255,0,59,1) 61%, rgba(209,36,176,1) 75%, rgba(149,0,255,1) 100%);
+}
+
+.sun {
+  position: absolute;
+  opacity: 0.;
+  height: 1000px;
+  width: 1500px;
+  border-radius: 50%;
+  filter: blur(100px);
+  background-color: rgb(171, 255, 206);
+  right: -10%;
+  top: 0%;
+  z-index: 0;
+}
+
+.item h3 {
+  margin-left: 50px;
+  font-weight: 600;
+  margin-bottom: 50px;
+ }
+
+ .item h2, .hours h2 {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 1rem;
+  color:rgb(206, 255, 228)
+ }

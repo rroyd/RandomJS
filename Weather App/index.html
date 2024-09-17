@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!-- ° -->
+  <body>
+    <main>
+      <div class="sun"></div>
+      <section class="weather">
+        <div class="start">
+          <h3></h3>
+          <h3></h3>
+          <div>
+            <select name="speed" id="speed">
+              <option value="kph" selected>KPH</option>
+              <option value="mph">MPH</option>
+            </select>
+            <select name="metric" id="metric">
+              <option value="c" selected>Celsius</option>
+              <option value="f">Fahrenheit</option>
+            </select>
+          </div>
+        </div>
+        <h1>39C</h1>
+        <h5>Feels like</h5>
+        <img class="icon" src="" alt="" />
+        <section class="bar">
+          <h2>Ashdod, Israel</h2>
+          <hr />
+          <h2>Humidity: 50%</h2>
+          <hr />
+          <h2>Clouds: 50%</h2>
+          <hr />
+          <h2>Sunny</h2>
+        </section>
+        <div id="uv"><div id="progressBar"></div></div>
+        <div class="hours">
+          <h2>Next hours</h2>
+          <section>
+            <div class="hour">
+              <h3>16:00</h3>
+              <img src="" alt="" />
+            </div>
+            <div class="hour">
+              <h3>16:00</h3>
+              <img src="" alt="" />
+            </div>
+          </section>
+        </div>
+        <section id="lastSection">
+          <div class="item">
+            <h2>Precipitation</h2>
+            <h3>Milimeters:</h3>
+            <h3>Inches:</h3>
+          </div>
+          <div class="item">
+            <h2>Gust</h2>
+            <h3>Speed:</h3>
+          </div>
+          <div class="item">
+            <h2>Pressure</h2>
+            <h3>Milibars:</h3>
+            <h3>Inches:</h3>
+          </div>
+          <div class="item">
+            <h2>Wind</h2>
+            <h3>Speed:</h3>
+            <h3>Degree:</h3>
+            <h3>Direction:</h3>
+          </div>
+          <div class="item">
+            <h2>Next days</h2>
+          </div>
+        </section>
+      </section>
+      <section class="slider">
+        <button class="toggle">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-chevron-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"
+            />
+          </svg>
+          <!-- <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-chevron-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"
+            />
+          </svg> -->
+        </button>
+        <div class="cards">
+          <div class="card">
+            <h2 class="location">Ashdod, Israel</h2>
+            <button>SELECT</button>
+          </div>
+          <div class="card">+</div>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
